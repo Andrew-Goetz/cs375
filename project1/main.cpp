@@ -4,7 +4,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <unistd.h>
 
 #define ENABLE_TESTING 0
 
@@ -118,7 +117,6 @@ string computeMaxProfit(vector<Card> &market, vector<Card> &vendor, const int bu
 		}
 	}
 	DONE:
-	sleep(1);
 	auto stop = chrono::high_resolution_clock::now();
 	output << market.size() << " " << maxProfit << " " << M.size() << " "
 	       << chrono::duration_cast<chrono::seconds>(stop - start).count()
