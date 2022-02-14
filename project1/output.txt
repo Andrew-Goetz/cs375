@@ -1,0 +1,21 @@
+10 3000 2 1
+JimRice1975
+RickyHenderson1983
+10 1300 2 1
+DerekJeter1996
+JimRice1975
+10 2116800 10 1
+HonusWagner1933
+JimRice1975
+DerekJeter1996
+RickyHenderson1983
+JohnSmith2077
+card1
+card2
+card3
+card4
+card5
+10 2110000 3 1
+HonusWagner1933
+card1
+card4
