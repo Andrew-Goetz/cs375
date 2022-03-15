@@ -8,7 +8,7 @@ using namespace std;
 
 typedef struct contestant {
 	int id;
-	int points;
+	int score;
 } Contestant;
 
 class PriorityQueue {
@@ -17,6 +17,7 @@ class PriorityQueue {
 		vector<int> handle;
 		ofstream output;
 		int n;
+		void minHeapify(int index);
 	public:
 		PriorityQueue(int size, char output_file[]);
 		void findContestant(int k);
