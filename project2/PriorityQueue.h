@@ -6,7 +6,7 @@
 
 using namespace std;
 
-typedef contestant {
+typedef struct contestant {
 	int id;
 	int points;
 } Contestant;
@@ -18,7 +18,7 @@ class PriorityQueue {
 		ofstream output;
 		int n;
 	public:
-		PriorityQueue(int size);
+		PriorityQueue(int size, char output_file[]);
 		void findContestant(int k);
 		void insertContestant(int k, int s);
 		void eliminateWeakest(void);
@@ -28,6 +28,6 @@ class PriorityQueue {
 		void showHandles(void);
 		void showLocation(int k);
 		void crownWinner(void);
-}
+};
 
 #endif
