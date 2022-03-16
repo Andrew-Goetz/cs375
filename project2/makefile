@@ -1,5 +1,5 @@
 CC = g++
-#FLAGS = -03 -f -Wall
+FLAGS = -03 -f -Wall
 OBJECT_FILES = main.o PriorityQueue.o
 EXECUTABLE = submission
 

@@ -17,7 +17,7 @@ class PriorityQueue {
 		vector<int> handle;
 		ofstream output;
 		int n;
-		void minHeapify(int index);
+		void minHeapify(int index, bool up);
 		void heapExchange(int i, int j);
 		int parent(int i);
 	public:
