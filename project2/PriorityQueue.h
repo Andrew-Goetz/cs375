@@ -18,6 +18,8 @@ class PriorityQueue {
 		ofstream output;
 		int n;
 		void minHeapify(int index);
+		void heapExchange(int i, int j);
+		int parent(int i);
 	public:
 		PriorityQueue(int size, char output_file[]);
 		void findContestant(int k);

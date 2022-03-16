@@ -1,7 +1,7 @@
 CC = g++
 #FLAGS = -03 -f -Wall
-OBJECT_FILES = main.o
-EXECUTABLE = program1
+OBJECT_FILES = main.o PriorityQueue.o
+EXECUTABLE = submission
 
 all:	$(OBJECT_FILES)
 		$(CC) $(OBJECT_FILES) -o $(EXECUTABLE)

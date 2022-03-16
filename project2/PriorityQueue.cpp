@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -9,9 +10,10 @@ using namespace std;
 
 PriorityQueue::PriorityQueue(int size, char output_file[]) {
 	n = size+1;
-	for(int i = 0; i < n; i++) heap.push_back(Contestant{-1, -1});
-	handle(n, -1);
-	output(output_file); // PRINT STUFF TO COUT FOR NOW FOR DEBUGGING
+	//for(int i = 0; i < n; i++) heap.push_back(Contestant{-1, -1});
+	vector<Contestant> heap(n, Contestant{-1, -1});
+	vector<int> handle(n, -1);
+	ofstream output(output_file); // PRINT STUFF TO COUT FOR NOW FOR DEBUGGING
 }
 
 void PriorityQueue::findContestant(int k) {
@@ -39,10 +41,10 @@ void PriorityQueue::insertContestant(int k, int s) {
 		}
 	}
 
-	for(int i = 1; i < (int)floor((double)n/2.0); i++) {
+	for(int i = 1; i < parent(n); i++) {
 		
 	}
-	minHeapify(k);
+	minHeapify(parent(k));
 	cout << "Contestant " << k << " inserted with initial score " << s << ".\n";
 }
 
@@ -80,6 +82,31 @@ void PriorityQueue::crownWinner(void) {
 
 }
 
-void PriorityQueue::minHeapify(int index) {
+// assumes value at index i is already in handle vector
+void PriorityQueue::minHeapify(int i) {
+	int l = i*2;
+	int r = i*2+1;
+	assert(heap[l].score != -1);
+	assert(heap[r].score != -1);
 
+	int min = -1;
+	(heap[i].score > heap[l].score) ? min = l : min = i;
+	if(heap[min].score > heap[r].score) min = r;
+
+	if(min != i && i != 1) {
+		heapExchange(i, min);
+		minHeapify(parent(min));
+	}
+}
+
+void PriorityQueue::heapExchange(int i, int j) {
+	handle[heap[i].id] = j;
+	handle[heap[j].id] = i;
+	Contestant temp = heap[i];
+	heap[i] = heap[j];	
+	heap[j] = temp;
+}
+
+int PriorityQueue::parent(int i) {
+	return (int)floor((double)i/2.0);
 }
