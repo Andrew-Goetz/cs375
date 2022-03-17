@@ -15,7 +15,7 @@ PriorityQueue::PriorityQueue(int size, char output_file[]) {
 		heap.push_back(Contestant{-1, -1});
 		handle.push_back(-1);
 	}
-	output(output_file);
+	output.open(output_file, ofstream::out);
 }
 
 void PriorityQueue::findContestant(int k) {
