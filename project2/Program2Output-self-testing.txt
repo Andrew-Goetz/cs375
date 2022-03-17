@@ -16,9 +16,9 @@ Contestant <5> is not in the extended heap.
 eliminateWeakest
 Contestant <1> with current lowest score <0> eliminated.
 losePoints <3> <40>
-Contestant <3>'s score decreased by <40> points to <40>.
+Contestant <3>'s score decreased by <40> points to <40>.
 earnPoints <2> <10>
-Contestant <2>'s score increased by <10> points to <25>.
+Contestant <2>'s score increased by <10> points to <25>.
 showContestants
 Contestant <4> in extended heap location <1> with score <20>.
 Contestant <2> in extended heap location <2> with score <25>.

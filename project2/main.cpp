@@ -65,6 +65,10 @@ int parseInput(int argc, char input_file[], vector<Instruction> &instructions) {
 
 void runInstruction(PriorityQueue &q, Instruction &i) {
 	/* tfw no reflection in C++ */
+	q.output << i.instr;
+	if(i.k != -1) q.output << " <" << i.k << ">";
+	if(i.p != -1) q.output << " <" << i.p << ">";
+	q.output << endl;
 	if(i.instr == "findContestant") { // k
 		assert(i.p == -1);
 		q.findContestant(i.k);
@@ -79,7 +83,7 @@ void runInstruction(PriorityQueue &q, Instruction &i) {
 		q.losePoints(i.k, i.p);		
 	} else if(i.instr == "eliminateWeakest") { // void
 		assert(i.k == -1 && i.p == -1);
-		q.eliminateWeakest();
+		q.eliminateWeakest(false);
 	} else if(i.instr == "showContestants") { // void
 		assert(i.k == -1 && i.p == -1);
 		q.showContestants();

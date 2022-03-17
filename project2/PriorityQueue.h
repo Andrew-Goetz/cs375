@@ -15,16 +15,17 @@ class PriorityQueue {
 	private:
 		vector<Contestant> heap;
 		vector<int> handle;
-		ofstream output;
 		int n;
 		void minHeapify(int index, bool up);
 		void heapExchange(int i, int j);
 		int parent(int i);
+		void avoid_segfault(int k);
 	public:
+		ofstream output;
 		PriorityQueue(int size, char output_file[]);
 		void findContestant(int k);
 		void insertContestant(int k, int s);
-		void eliminateWeakest(void);
+		void eliminateWeakest(bool fromCrownWinner);
 		void earnPoints(int k, int p);
 		void losePoints(int k, int p);
 		void showContestants(void);
